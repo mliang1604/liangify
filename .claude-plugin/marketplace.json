@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "liangify",
   "description": "Michael Liang's personal Claude Code customizations — agents, commands, skills, and hooks shared across projects.",
   "owner": {

@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "typescript",
   "displayName": "Liangify TypeScript",
   "description": "TypeScript language style — strict typing, narrowing, discriminated unions, branded types, generics. Framework-agnostic; consumed by Angular/Node/React projects. Depends on `core`.",
@@ -9,10 +8,6 @@
   },
   "license": "MIT",
   "keywords": ["typescript", "language"],
-  "agents": "./agents/",
-  "commands": "./commands/",
-  "skills": "./skills/",
-  "hooks": "./hooks/hooks.json",
   "dependencies": [
     { "name": "core", "version": "*" }
   ]
