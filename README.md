@@ -10,7 +10,8 @@ liangify/
 │   └── marketplace.json          # marketplace manifest
 └── plugins/
     ├── core/                     # language-agnostic: clean-code, code review, git workflow
-    └── angular/                  # Angular 17+ / TypeScript: patterns, RxJS, forms, testing
+    ├── typescript/               # TypeScript language style
+    └── angular/                  # Angular 17+: patterns, RxJS, forms, Jasmine/Karma testing
 ```
 
 Each plugin follows the same internal layout:
@@ -31,7 +32,8 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | Plugin | Install | Description |
 |---|---|---|
 | **core** | `/plugin install core@liangify` | Language-agnostic skills: clean code (Uncle Bob), code-review style, git workflow. |
-| **angular** | `/plugin install angular@liangify` | Angular 17+ patterns, TypeScript style, RxJS, reactive forms, testing. Depends on `core`. |
+| **typescript** | `/plugin install typescript@liangify` | TypeScript language style: strict typing, narrowing, discriminated unions, branded types. Depends on `core`. |
+| **angular** | `/plugin install angular@liangify` | Angular 17+ patterns, RxJS, reactive forms, Jasmine/Karma testing. Depends on `core` and `typescript`. |
 
 ## Consuming from another repo
 
@@ -40,7 +42,8 @@ In any project where you want these tools available:
 ```
 /plugin marketplace add mliang1604/liangify
 /plugin install core@liangify
-/plugin install angular@liangify     # only where you want Angular tooling
+/plugin install typescript@liangify  # any TS project (Node, library, etc.)
+/plugin install angular@liangify     # Angular projects (also pulls in core + typescript)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:
@@ -54,6 +57,7 @@ That enables the plugins for your user account. To pin them for the whole projec
   },
   "enabledPlugins": {
     "core@liangify": true,
+    "typescript@liangify": true,
     "angular@liangify": true
   }
 }

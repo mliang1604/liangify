@@ -13,9 +13,14 @@
       "description": "Core agents, commands, skills, and hooks for Michael Liang's personal projects."
     },
     {
+      "name": "typescript",
+      "source": "./plugins/typescript",
+      "description": "TypeScript language style — strict typing, narrowing, discriminated unions, branded types, generics. Framework-agnostic. Depends on `core`."
+    },
+    {
       "name": "angular",
       "source": "./plugins/angular",
-      "description": "Angular (17+) and TypeScript best-practice skills — modern patterns, RxJS, reactive forms, and testing. Depends on `core`."
+      "description": "Angular (17+) skills — modern patterns, RxJS, reactive forms, Jasmine/Karma testing. Depends on `core` and `typescript`."
     }
   ]
 }
