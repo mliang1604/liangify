@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "liangify",
+  "description": "Michael Liang's personal Claude Code customizations — agents, commands, skills, and hooks shared across projects.",
+  "owner": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "./plugins/core",
+      "description": "Core agents, commands, skills, and hooks for Michael Liang's personal projects."
+    },
+    {
+      "name": "angular",
+      "source": "./plugins/angular",
+      "description": "Angular (17+) and TypeScript best-practice skills — modern patterns, RxJS, reactive forms, and testing. Depends on `core`."
+    }
+  ]
+}

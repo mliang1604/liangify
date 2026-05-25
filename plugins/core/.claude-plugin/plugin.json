@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "core",
+  "displayName": "Liangify Core",
+  "description": "Core agents, commands, skills, and hooks shared across Michael Liang's personal projects.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["personal", "tooling", "agents", "skills"],
+  "agents": "./agents/",
+  "commands": "./commands/",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}

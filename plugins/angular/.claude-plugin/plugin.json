@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "angular",
+  "displayName": "Liangify Angular",
+  "description": "Angular (17+) and TypeScript best-practice skills — modern patterns, RxJS, reactive forms, and testing. Depends on `core` for clean-code fundamentals.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["angular", "typescript", "rxjs", "frontend"],
+  "agents": "./agents/",
+  "commands": "./commands/",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "dependencies": [
+    { "name": "core", "version": "*" }
+  ]
+}
