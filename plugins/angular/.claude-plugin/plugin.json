@@ -1,5 +1,6 @@
 {
   "name": "angular",
+  "version": "0.1.0",
   "displayName": "Liangify Angular",
   "description": "Angular (17+) skills — modern component patterns, RxJS, reactive forms, Jasmine/Karma testing. Depends on `core` for clean-code fundamentals and `typescript` for language style.",
   "author": {

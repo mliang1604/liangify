@@ -1,5 +1,6 @@
 {
   "name": "typescript",
+  "version": "0.1.0",
   "displayName": "Liangify TypeScript",
   "description": "TypeScript language style — strict typing, narrowing, discriminated unions, branded types, generics. Framework-agnostic; consumed by Angular/Node/React projects. Depends on `core`.",
   "author": {

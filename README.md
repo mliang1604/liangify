@@ -67,11 +67,13 @@ Teammates cloning the repo will be prompted to install on first run.
 
 ## Updating
 
-The plugin manifest intentionally omits a `version` field, so Claude Code tracks the latest commit on `main`. Consumers get updates with:
+Each plugin carries an explicit `version` field (currently `0.1.0`). Consumers get updates when the version bumps. Pull the latest with:
 
 ```
 /plugin marketplace update liangify
 ```
+
+> **Maintainer note:** bump the `version` in `plugin.json` whenever you change a plugin's contents — Claude Code does not auto-detect changes via git SHA when a `version` is present. Version is required (and must be present on every plugin) because cross-plugin `dependencies` resolution needs it.
 
 ## Adding components
 
