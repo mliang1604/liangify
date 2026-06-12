@@ -11,7 +11,8 @@ liangify/
 └── plugins/
     ├── core/                     # language-agnostic: clean-code, code review, git workflow
     ├── typescript/               # TypeScript language style
-    └── angular/                  # Angular 17+: patterns, RxJS, forms, Jasmine/Karma testing
+    ├── angular/                  # Angular 17+: patterns, RxJS, forms, Jasmine/Karma testing
+    └── unity/                    # Unity 6: C# patterns, asset/GUID hygiene, performance, testing
 ```
 
 Each plugin follows the same internal layout:
@@ -34,6 +35,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **core** | `/plugin install core@liangify` | Language-agnostic skills: clean code (Uncle Bob), code-review style, git workflow. |
 | **typescript** | `/plugin install typescript@liangify` | TypeScript language style: strict typing, narrowing, discriminated unions, branded types. Depends on `core`. |
 | **angular** | `/plugin install angular@liangify` | Angular 17+ patterns, RxJS, reactive forms, Jasmine/Karma testing. Depends on `core` and `typescript`. |
+| **unity** | `/plugin install unity@liangify` | Unity 6: C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, headless test/build verification. Depends on `core`. |
 
 ## Consuming from another repo
 
@@ -44,6 +46,7 @@ In any project where you want these tools available:
 /plugin install core@liangify
 /plugin install typescript@liangify  # any TS project (Node, library, etc.)
 /plugin install angular@liangify     # Angular projects (also pulls in core + typescript)
+/plugin install unity@liangify       # Unity projects (also pulls in core)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:

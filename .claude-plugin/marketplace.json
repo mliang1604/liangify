@@ -20,6 +20,11 @@
       "name": "angular",
       "source": "./plugins/angular",
       "description": "Angular (17+) skills — modern patterns, RxJS, reactive forms, Jasmine/Karma testing. Depends on `core` and `typescript`."
+    },
+    {
+      "name": "unity",
+      "source": "./plugins/unity",
+      "description": "Unity 6 skills — C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, Test Framework + batchmode verification. Depends on `core`."
     }
   ]
 }
