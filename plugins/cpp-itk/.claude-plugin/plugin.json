@@ -1,0 +1,15 @@
+{
+  "name": "cpp-itk",
+  "version": "0.1.0",
+  "displayName": "Liangify C++ / ITK",
+  "description": "Native compute skills — modern C++ style and static analysis, target-based CMake with presets and ITK/elastix dependencies across macOS/Windows/Linux, ITK pipelines (smart pointers, image geometry, DICOM series IO, transform conventions vs DICOM registration objects, threading, determinism), a command-line worker contract for Node job runners, and native unit/regression testing. Depends on `core`.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["cpp", "cmake", "itk", "elastix", "registration"],
+  "dependencies": [
+    { "name": "core", "version": "*" }
+  ]
+}
