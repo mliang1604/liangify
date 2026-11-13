@@ -68,6 +68,10 @@ def hook_script_paths(node) -> list[str]:
         for key, value in node.items():
             if key == "command" and isinstance(value, str):
                 found += re.findall(r"\$\{CLAUDE_PLUGIN_ROOT\}/([^\s\"']+)", value)
+            elif key == "args" and isinstance(value, list):
+                for arg in value:
+                    if isinstance(arg, str):
+                        found += re.findall(r"\$\{CLAUDE_PLUGIN_ROOT\}/([^\s\"']+)", arg)
             else:
                 found += hook_script_paths(value)
     elif isinstance(node, list):

@@ -1,8 +1,8 @@
 {
   "name": "dicom-rt",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "displayName": "Liangify DICOM-RT",
-  "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data and data-safety rules, and dose summation / EQD2 math. Depends on `core`.",
+  "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data and data-safety rules, and dose summation / EQD2 math; includes the dicom-guard hook that blocks DICOM files outside the synthetic test-data folder. Depends on `core`.",
   "author": {
     "name": "Michael Liang",
     "email": "mliang1987@gmail.com"

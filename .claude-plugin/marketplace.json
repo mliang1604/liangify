@@ -34,7 +34,7 @@
     {
       "name": "dicom-rt",
       "source": "./plugins/dicom-rt",
-      "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data rules, dose summation and EQD2 math. Depends on `core`."
+      "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data rules, dose summation and EQD2 math, plus a hook that blocks DICOM files outside the synthetic test-data folder. Depends on `core`."
     }
   ]
 }
