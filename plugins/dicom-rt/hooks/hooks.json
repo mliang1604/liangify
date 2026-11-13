@@ -1,3 +1,18 @@
 {
-  "hooks": {}
+  "description": "dicom-guard: block writing, staging or committing DICOM files outside the allowed synthetic test-data folder.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/dicom-guard.mjs"],
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
 }

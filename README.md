@@ -39,7 +39,25 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **angular** | `/plugin install angular@liangify` | Angular 22: zoneless + signals patterns, RxJS and resources, Signal Forms and reactive forms, Vitest testing. Depends on `core` and `typescript`. |
 | **unity** | `/plugin install unity@liangify` | Unity 6: C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, headless test/build verification. Depends on `core`. |
 | **webgpu** | `/plugin install webgpu@liangify` | WebGPU: device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, keeping shader and CPU geometry in sync, testing without a GPU. Depends on `core` and `typescript`. |
-| **dicom-rt** | `/plugin install dicom-rt@liangify` | DICOM and radiotherapy: LPS geometry and slice ordering, RTSTRUCT/RTDOSE/RTPLAN, rigid and deformable registration objects, DIMSE networking and TLS, synthetic test data rules, dose summation and BED/EQD2. Depends on `core`. |
+| **dicom-rt** | `/plugin install dicom-rt@liangify` | DICOM and radiotherapy: LPS geometry and slice ordering, RTSTRUCT/RTDOSE/RTPLAN, rigid and deformable registration objects, DIMSE networking and TLS, synthetic test data rules, dose summation and BED/EQD2. Includes the `dicom-guard` hook (below). Depends on `core`. |
+
+### dicom-rt: `dicom-guard` hook
+
+The `dicom-rt` plugin ships a `PreToolUse` hook that stops Claude from writing, staging or committing DICOM files outside a designated synthetic test-data folder. In a public repository a committed patient study can't be un-published, so this is enforced mechanically rather than left to instructions.
+
+- **What it checks:** `Write`, `Edit`, `MultiEdit` and `NotebookEdit` targets, and `git add` / `git commit` run through `Bash` or `PowerShell` (it asks git which files would be staged or committed, including `-A`, globs and `commit -a`).
+- **What counts as DICOM:** a `.dcm` extension (any case), or the `DICM` magic bytes at offset 128 (so extensionless Part 10 files are caught too).
+- **When it blocks:** the tool call is refused (exit code 2) and Claude is told which files were blocked, why, and where synthetic fixtures belong. Files inside the allowed folder pass.
+- **Default allowed folder:** `**/testdata/synthetic/**` (any `testdata/synthetic/` directory in the project).
+- **Changing the allowed folder** (globs relative to the project root; `**`, `*` and `?` supported). The first of these that is set wins:
+  1. the `DICOM_GUARD_ALLOWED` environment variable, comma-separated. To commit it with the project, set it in `.claude/settings.json`:
+     ```json
+     { "env": { "DICOM_GUARD_ALLOWED": "test/fixtures/dicom/**,e2e/fixtures/synthetic/**" } }
+     ```
+  2. a `.claude/dicom-guard.json` file in the project: `{ "allowed": ["test/fixtures/dicom/**"] }`.
+- **Requirements:** Node.js on `PATH` (the hook runs `node` directly, with no shell, so it behaves the same on macOS, Windows and Linux), and git for the `git add`/`commit` checks. It has no dependencies.
+- **Limits:** it guards file-writing tools and git staging/commits. Other shell commands that create files (`cp`, `curl`, an export script) aren't inspected, but their output is still caught when someone tries to stage or commit it. If the hook itself fails (malformed input, git missing), it reports the error and lets the call through rather than wedging the session.
+- **Tests:** `node --test plugins/dicom-rt/hooks/dicom-guard.test.mjs`.
 
 ## Consuming from another repo
 
