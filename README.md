@@ -17,7 +17,8 @@ liangify/
     ├── dicom-rt/                 # DICOM/RT: geometry, RT objects + registration, DIMSE, test data, dose math
     ├── electron/                 # Electron: architecture, security, packaging/signing, testing
     ├── node-service/             # Node services: structure, storage, jobs, security/audit, testing
-    └── cpp-itk/                  # C++/ITK: style, CMake, ITK/elastix pipelines, CLI worker contract, testing
+    ├── cpp-itk/                  # C++/ITK: style, CMake, ITK/elastix pipelines, CLI worker contract, testing
+    └── playwright/               # Playwright: test patterns, CI setup, canvas/WebGPU app testing
 ```
 
 Each plugin follows the same internal layout:
@@ -46,6 +47,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **electron** | `/plugin install electron@liangify` | Electron: main/preload/renderer split with a browser-runnable renderer, security hardening and IPC validation, packaging/signing/notarization/auto-update with bundled native helpers, Playwright + xvfb testing. Depends on `core` and `typescript`. |
 | **node-service** | `/plugin install node-service@liangify` | Node/TypeScript services: transport-independent core (runs as a server or inside Electron), storage ports with SQLite/PostgreSQL backends and streaming, job contract for native CLI workers, auth/audit/PHI-safe logging, Vitest + Testcontainers. Framework-agnostic. Depends on `core` and `typescript`. |
 | **cpp-itk** | `/plugin install cpp-itk@liangify` | C++ / ITK native compute: modern C++ style + static analysis, target-based CMake with presets and pinned ITK/elastix on macOS/Windows/Linux, ITK geometry and transform conventions vs DICOM REG/DSR, CLI worker contract (JSONL progress, exit codes), GoogleTest regression tests on known transforms. Depends on `core`. |
+| **playwright** | `/plugin install playwright@liangify` | Playwright E2E: role/test-id locators, web-first assertions, fixtures and isolation; CI with webServer, retries/traces, sharding, GPU-less runners; testing canvas/WebGPU apps through state, overlays and selective screenshots. Depends on `core` and `typescript`. |
 
 ### dicom-rt: `dicom-guard` hook
 
@@ -80,6 +82,7 @@ In any project where you want these tools available:
 /plugin install electron@liangify    # Electron desktop apps (also pulls in core + typescript)
 /plugin install node-service@liangify  # Node/TypeScript backends (also pulls in core + typescript)
 /plugin install cpp-itk@liangify     # C++/ITK native tools (also pulls in core)
+/plugin install playwright@liangify  # end-to-end tests (also pulls in core + typescript)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:

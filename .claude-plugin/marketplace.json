@@ -50,6 +50,11 @@
       "name": "cpp-itk",
       "source": "./plugins/cpp-itk",
       "description": "Native compute skills — modern C++ style and static analysis, target-based CMake with presets and pinned ITK/elastix across macOS/Windows/Linux, ITK pipelines and transform conventions vs DICOM registration objects, a command-line worker contract for Node job runners, native unit/regression testing. Depends on `core`."
+    },
+    {
+      "name": "playwright",
+      "source": "./plugins/playwright",
+      "description": "Playwright end-to-end testing — role/test-id locators, web-first assertions, no sleeps, fixtures, isolation; CI with app/service startup, retries and traces, sharding, GPU-less and display-less runners; testing canvas apps via state and DOM overlays, selective screenshots and WebGPU degradation. Depends on `core` and `typescript`."
     }
   ]
 }
