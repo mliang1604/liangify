@@ -19,7 +19,7 @@
     {
       "name": "angular",
       "source": "./plugins/angular",
-      "description": "Angular (17+) skills — modern patterns, RxJS, reactive forms, Vitest testing (zoneless). Depends on `core` and `typescript`."
+      "description": "Angular 22 skills — zoneless + signals patterns, RxJS and resources, Signal Forms and reactive forms, Vitest testing. Depends on `core` and `typescript`."
     },
     {
       "name": "unity",

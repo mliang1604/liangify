@@ -1,8 +1,8 @@
 {
   "name": "angular",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "displayName": "Liangify Angular",
-  "description": "Angular (17+) skills — modern component patterns, RxJS, reactive forms, Vitest testing (zoneless). Depends on `core` for clean-code fundamentals and `typescript` for language style.",
+  "description": "Angular 22 skills — zoneless + signals component patterns, RxJS and resources, Signal Forms and reactive forms, Vitest testing. Depends on `core` for clean-code fundamentals and `typescript` for language style.",
   "author": {
     "name": "Michael Liang",
     "email": "mliang1987@gmail.com"
