@@ -1,0 +1,15 @@
+{
+  "name": "dicom-rt",
+  "version": "0.1.0",
+  "displayName": "Liangify DICOM-RT",
+  "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data and data-safety rules, and dose summation / EQD2 math. Depends on `core`.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["dicom", "radiotherapy", "rtstruct", "rtdose", "medical-imaging"],
+  "dependencies": [
+    { "name": "core", "version": "*" }
+  ]
+}

@@ -13,7 +13,8 @@ liangify/
     ├── typescript/               # TypeScript language style
     ├── angular/                  # Angular 22: zoneless patterns, RxJS/resources, forms, Vitest
     ├── unity/                    # Unity 6: C# patterns, asset/GUID hygiene, performance, testing
-    └── webgpu/                   # WebGPU: device/resources, WGSL style, shader/CPU parity, GPU-free testing
+    ├── webgpu/                   # WebGPU: device/resources, WGSL style, shader/CPU parity, GPU-free testing
+    └── dicom-rt/                 # DICOM/RT: geometry, RT objects + registration, DIMSE, test data, dose math
 ```
 
 Each plugin follows the same internal layout:
@@ -38,6 +39,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **angular** | `/plugin install angular@liangify` | Angular 22: zoneless + signals patterns, RxJS and resources, Signal Forms and reactive forms, Vitest testing. Depends on `core` and `typescript`. |
 | **unity** | `/plugin install unity@liangify` | Unity 6: C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, headless test/build verification. Depends on `core`. |
 | **webgpu** | `/plugin install webgpu@liangify` | WebGPU: device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, keeping shader and CPU geometry in sync, testing without a GPU. Depends on `core` and `typescript`. |
+| **dicom-rt** | `/plugin install dicom-rt@liangify` | DICOM and radiotherapy: LPS geometry and slice ordering, RTSTRUCT/RTDOSE/RTPLAN, rigid and deformable registration objects, DIMSE networking and TLS, synthetic test data rules, dose summation and BED/EQD2. Depends on `core`. |
 
 ## Consuming from another repo
 
@@ -50,6 +52,7 @@ In any project where you want these tools available:
 /plugin install angular@liangify     # Angular projects (also pulls in core + typescript)
 /plugin install unity@liangify       # Unity projects (also pulls in core)
 /plugin install webgpu@liangify      # WebGPU rendering (also pulls in core + typescript)
+/plugin install dicom-rt@liangify    # DICOM / radiotherapy work (also pulls in core)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:
