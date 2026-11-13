@@ -9,7 +9,7 @@ liangify/
 ├── .claude-plugin/
 │   └── marketplace.json          # marketplace manifest
 └── plugins/
-    ├── core/                     # language-agnostic: clean-code, code review, git workflow
+    ├── core/                     # language-agnostic: clean-code, code-review, git-workflow, code-tutor agent
     ├── typescript/               # TypeScript language style
     ├── angular/                  # Angular 22: zoneless patterns, RxJS/resources, forms, Vitest
     └── unity/                    # Unity 6: C# patterns, asset/GUID hygiene, performance, testing
@@ -32,7 +32,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 
 | Plugin | Install | Description |
 |---|---|---|
-| **core** | `/plugin install core@liangify` | Language-agnostic skills: clean code (Uncle Bob), code-review style, git workflow. |
+| **core** | `/plugin install core@liangify` | Language-agnostic skills: clean code (Uncle Bob), code review, git workflow. Agent: `code-tutor`, a Socratic tutor that teaches you to implement a task instead of writing it for you. |
 | **typescript** | `/plugin install typescript@liangify` | TypeScript language style: strict typing, narrowing, discriminated unions, branded types. Depends on `core`. |
 | **angular** | `/plugin install angular@liangify` | Angular 22: zoneless + signals patterns, RxJS and resources, Signal Forms and reactive forms, Vitest testing. Depends on `core` and `typescript`. |
 | **unity** | `/plugin install unity@liangify` | Unity 6: C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, headless test/build verification. Depends on `core`. |
@@ -70,7 +70,7 @@ Teammates cloning the repo will be prompted to install on first run.
 
 ## Updating
 
-Each plugin carries an explicit `version` field (currently `0.1.0`). Consumers get updates when the version bumps. Pull the latest with:
+Each plugin carries an explicit `version` field in its `plugin.json`. Consumers get updates when the version bumps. Pull the latest with:
 
 ```
 /plugin marketplace update liangify

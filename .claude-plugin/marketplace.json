@@ -9,7 +9,7 @@
     {
       "name": "core",
       "source": "./plugins/core",
-      "description": "Core agents, commands, skills, and hooks for Michael Liang's personal projects."
+      "description": "Language-agnostic foundations — clean-code (Uncle Bob), code-review and git-workflow skills, and the code-tutor teaching agent."
     },
     {
       "name": "typescript",

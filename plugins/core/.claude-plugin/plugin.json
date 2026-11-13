@@ -1,8 +1,8 @@
 {
   "name": "core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "displayName": "Liangify Core",
-  "description": "Core agents, commands, skills, and hooks shared across Michael Liang's personal projects.",
+  "description": "Language-agnostic foundations shared across Michael Liang's projects — skills: clean-code (Uncle Bob), code-review, git-workflow; agent: code-tutor (Socratic pair-programming tutor).",
   "author": {
     "name": "Michael Liang",
     "email": "mliang1987@gmail.com"
