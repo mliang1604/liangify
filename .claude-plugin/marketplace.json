@@ -25,6 +25,11 @@
       "name": "unity",
       "source": "./plugins/unity",
       "description": "Unity 6 skills — C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, Test Framework + batchmode verification. Depends on `core`."
+    },
+    {
+      "name": "webgpu",
+      "source": "./plugins/webgpu",
+      "description": "WebGPU rendering skills — device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, shader/CPU geometry parity, GPU-free testing. Depends on `core` and `typescript`."
     }
   ]
 }

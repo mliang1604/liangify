@@ -12,7 +12,8 @@ liangify/
     ├── core/                     # language-agnostic: clean-code, code-review, git-workflow, code-tutor agent
     ├── typescript/               # TypeScript language style
     ├── angular/                  # Angular 22: zoneless patterns, RxJS/resources, forms, Vitest
-    └── unity/                    # Unity 6: C# patterns, asset/GUID hygiene, performance, testing
+    ├── unity/                    # Unity 6: C# patterns, asset/GUID hygiene, performance, testing
+    └── webgpu/                   # WebGPU: device/resources, WGSL style, shader/CPU parity, GPU-free testing
 ```
 
 Each plugin follows the same internal layout:
@@ -36,6 +37,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **typescript** | `/plugin install typescript@liangify` | TypeScript language style: strict typing, narrowing, discriminated unions, branded types. Depends on `core`. |
 | **angular** | `/plugin install angular@liangify` | Angular 22: zoneless + signals patterns, RxJS and resources, Signal Forms and reactive forms, Vitest testing. Depends on `core` and `typescript`. |
 | **unity** | `/plugin install unity@liangify` | Unity 6: C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, headless test/build verification. Depends on `core`. |
+| **webgpu** | `/plugin install webgpu@liangify` | WebGPU: device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, keeping shader and CPU geometry in sync, testing without a GPU. Depends on `core` and `typescript`. |
 
 ## Consuming from another repo
 
@@ -47,6 +49,7 @@ In any project where you want these tools available:
 /plugin install typescript@liangify  # any TS project (Node, library, etc.)
 /plugin install angular@liangify     # Angular projects (also pulls in core + typescript)
 /plugin install unity@liangify       # Unity projects (also pulls in core)
+/plugin install webgpu@liangify      # WebGPU rendering (also pulls in core + typescript)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:
