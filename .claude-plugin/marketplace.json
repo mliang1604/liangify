@@ -35,6 +35,11 @@
       "name": "dicom-rt",
       "source": "./plugins/dicom-rt",
       "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data rules, dose summation and EQD2 math, plus a hook that blocks DICOM files outside the synthetic test-data folder. Depends on `core`."
+    },
+    {
+      "name": "electron",
+      "source": "./plugins/electron",
+      "description": "Electron desktop skills — main/preload/renderer architecture, security hardening (isolation, sandbox, typed contextBridge, IPC validation, navigation limits, CSP, fuses), cross-platform packaging, signing, auto-update and bundled native helpers, Playwright testing. Depends on `core` and `typescript`."
     }
   ]
 }

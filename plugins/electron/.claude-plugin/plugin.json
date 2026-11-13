@@ -1,0 +1,16 @@
+{
+  "name": "electron",
+  "version": "0.1.0",
+  "displayName": "Liangify Electron",
+  "description": "Electron desktop app skills — main/preload/renderer architecture with a renderer that also runs in a browser, security hardening (isolation, sandbox, typed contextBridge, IPC validation, navigation limits, CSP, fuses), cross-platform packaging, signing, notarization, auto-update and bundled native helpers, and Playwright testing of the packaged app. Depends on `core` and `typescript`.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["electron", "desktop", "ipc", "packaging", "security"],
+  "dependencies": [
+    { "name": "core", "version": "*" },
+    { "name": "typescript", "version": "*" }
+  ]
+}
