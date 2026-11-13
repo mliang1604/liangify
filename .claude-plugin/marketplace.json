@@ -30,6 +30,11 @@
       "name": "webgpu",
       "source": "./plugins/webgpu",
       "description": "WebGPU rendering skills — device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, shader/CPU geometry parity, GPU-free testing. Depends on `core` and `typescript`."
+    },
+    {
+      "name": "dicom-rt",
+      "source": "./plugins/dicom-rt",
+      "description": "DICOM and radiotherapy domain knowledge — patient coordinates and slice geometry, RTSTRUCT/RTDOSE/RTPLAN and rigid/deformable registration objects, DIMSE networking, synthetic test data rules, dose summation and EQD2 math. Depends on `core`."
     }
   ]
 }
