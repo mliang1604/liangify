@@ -1,0 +1,16 @@
+{
+  "name": "webgpu",
+  "version": "0.1.0",
+  "displayName": "Liangify WebGPU",
+  "description": "WebGPU rendering skills — device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, keeping shader and CPU geometry in sync, and testing GPU code on GPU-less CI. Depends on `core` and `typescript`.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["webgpu", "wgsl", "gpu", "rendering"],
+  "dependencies": [
+    { "name": "core", "version": "*" },
+    { "name": "typescript", "version": "*" }
+  ]
+}
