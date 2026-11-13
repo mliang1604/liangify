@@ -14,7 +14,8 @@ liangify/
     ├── angular/                  # Angular 22: zoneless patterns, RxJS/resources, forms, Vitest
     ├── unity/                    # Unity 6: C# patterns, asset/GUID hygiene, performance, testing
     ├── webgpu/                   # WebGPU: device/resources, WGSL style, shader/CPU parity, GPU-free testing
-    └── dicom-rt/                 # DICOM/RT: geometry, RT objects + registration, DIMSE, test data, dose math
+    ├── dicom-rt/                 # DICOM/RT: geometry, RT objects + registration, DIMSE, test data, dose math
+    └── electron/                 # Electron: architecture, security, packaging/signing, testing
 ```
 
 Each plugin follows the same internal layout:
@@ -40,6 +41,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **unity** | `/plugin install unity@liangify` | Unity 6: C# scripting patterns, asset/GUID/meta hygiene for AI-assisted work, performance discipline, headless test/build verification. Depends on `core`. |
 | **webgpu** | `/plugin install webgpu@liangify` | WebGPU: device setup and graceful failure, resource lifetime and device loss, WGSL style and uniform layout, keeping shader and CPU geometry in sync, testing without a GPU. Depends on `core` and `typescript`. |
 | **dicom-rt** | `/plugin install dicom-rt@liangify` | DICOM and radiotherapy: LPS geometry and slice ordering, RTSTRUCT/RTDOSE/RTPLAN, rigid and deformable registration objects, DIMSE networking and TLS, synthetic test data rules, dose summation and BED/EQD2. Includes the `dicom-guard` hook (below). Depends on `core`. |
+| **electron** | `/plugin install electron@liangify` | Electron: main/preload/renderer split with a browser-runnable renderer, security hardening and IPC validation, packaging/signing/notarization/auto-update with bundled native helpers, Playwright + xvfb testing. Depends on `core` and `typescript`. |
 
 ### dicom-rt: `dicom-guard` hook
 
@@ -71,6 +73,7 @@ In any project where you want these tools available:
 /plugin install unity@liangify       # Unity projects (also pulls in core)
 /plugin install webgpu@liangify      # WebGPU rendering (also pulls in core + typescript)
 /plugin install dicom-rt@liangify    # DICOM / radiotherapy work (also pulls in core)
+/plugin install electron@liangify    # Electron desktop apps (also pulls in core + typescript)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:
