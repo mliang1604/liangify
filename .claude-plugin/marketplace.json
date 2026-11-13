@@ -40,6 +40,11 @@
       "name": "electron",
       "source": "./plugins/electron",
       "description": "Electron desktop skills — main/preload/renderer architecture, security hardening (isolation, sandbox, typed contextBridge, IPC validation, navigation limits, CSP, fuses), cross-platform packaging, signing, auto-update and bundled native helpers, Playwright testing. Depends on `core` and `typescript`."
+    },
+    {
+      "name": "node-service",
+      "source": "./plugins/node-service",
+      "description": "TypeScript-on-Node service skills — transport-independent structure that also runs inside Electron, storage behind small interfaces (SQLite/PostgreSQL, streaming), long-running job contract for native workers, auth/audit/PHI-safe logging, Vitest and container-based integration tests. Framework-agnostic. Depends on `core` and `typescript`."
     }
   ]
 }

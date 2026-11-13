@@ -1,0 +1,16 @@
+{
+  "name": "node-service",
+  "version": "0.1.0",
+  "displayName": "Liangify Node Service",
+  "description": "Backend skills for TypeScript on Node — transport-independent service structure that also runs inside Electron, configuration, logging, shutdown and validation; storage behind small interfaces (SQLite/PostgreSQL, streaming); long-running job contract for native workers; authentication, authorization, audit and PHI-safe logging; Vitest unit tests and container-based integration tests. Framework-agnostic. Depends on `core` and `typescript`.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["node", "typescript", "backend", "api", "jobs"],
+  "dependencies": [
+    { "name": "core", "version": "*" },
+    { "name": "typescript", "version": "*" }
+  ]
+}
