@@ -1,0 +1,16 @@
+{
+  "name": "playwright",
+  "version": "0.1.0",
+  "displayName": "Liangify Playwright",
+  "description": "End-to-end testing with Playwright — role/test-id locators, web-first assertions, no fixed sleeps, fixtures, page objects only where they pay off, test isolation; CI setup with app and service startup, retries and traces, sharding, GPU-less and display-less runners; and testing canvas-centric apps via state and DOM overlays, selective screenshots and graceful WebGPU degradation. Depends on `core` and `typescript`.",
+  "author": {
+    "name": "Michael Liang",
+    "email": "mliang1987@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["playwright", "e2e", "testing", "ci"],
+  "dependencies": [
+    { "name": "core", "version": "*" },
+    { "name": "typescript", "version": "*" }
+  ]
+}
