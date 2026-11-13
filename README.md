@@ -16,7 +16,8 @@ liangify/
     ├── webgpu/                   # WebGPU: device/resources, WGSL style, shader/CPU parity, GPU-free testing
     ├── dicom-rt/                 # DICOM/RT: geometry, RT objects + registration, DIMSE, test data, dose math
     ├── electron/                 # Electron: architecture, security, packaging/signing, testing
-    └── node-service/             # Node services: structure, storage, jobs, security/audit, testing
+    ├── node-service/             # Node services: structure, storage, jobs, security/audit, testing
+    └── cpp-itk/                  # C++/ITK: style, CMake, ITK/elastix pipelines, CLI worker contract, testing
 ```
 
 Each plugin follows the same internal layout:
@@ -44,6 +45,7 @@ Additional plugins can be added under `plugins/<name>/` and registered in [marke
 | **dicom-rt** | `/plugin install dicom-rt@liangify` | DICOM and radiotherapy: LPS geometry and slice ordering, RTSTRUCT/RTDOSE/RTPLAN, rigid and deformable registration objects, DIMSE networking and TLS, synthetic test data rules, dose summation and BED/EQD2. Includes the `dicom-guard` hook (below). Depends on `core`. |
 | **electron** | `/plugin install electron@liangify` | Electron: main/preload/renderer split with a browser-runnable renderer, security hardening and IPC validation, packaging/signing/notarization/auto-update with bundled native helpers, Playwright + xvfb testing. Depends on `core` and `typescript`. |
 | **node-service** | `/plugin install node-service@liangify` | Node/TypeScript services: transport-independent core (runs as a server or inside Electron), storage ports with SQLite/PostgreSQL backends and streaming, job contract for native CLI workers, auth/audit/PHI-safe logging, Vitest + Testcontainers. Framework-agnostic. Depends on `core` and `typescript`. |
+| **cpp-itk** | `/plugin install cpp-itk@liangify` | C++ / ITK native compute: modern C++ style + static analysis, target-based CMake with presets and pinned ITK/elastix on macOS/Windows/Linux, ITK geometry and transform conventions vs DICOM REG/DSR, CLI worker contract (JSONL progress, exit codes), GoogleTest regression tests on known transforms. Depends on `core`. |
 
 ### dicom-rt: `dicom-guard` hook
 
@@ -77,6 +79,7 @@ In any project where you want these tools available:
 /plugin install dicom-rt@liangify    # DICOM / radiotherapy work (also pulls in core)
 /plugin install electron@liangify    # Electron desktop apps (also pulls in core + typescript)
 /plugin install node-service@liangify  # Node/TypeScript backends (also pulls in core + typescript)
+/plugin install cpp-itk@liangify     # C++/ITK native tools (also pulls in core)
 ```
 
 That enables the plugins for your user account. To pin them for the whole project (commit alongside the repo), add to `.claude/settings.json`:

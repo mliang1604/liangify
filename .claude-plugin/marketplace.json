@@ -45,6 +45,11 @@
       "name": "node-service",
       "source": "./plugins/node-service",
       "description": "TypeScript-on-Node service skills — transport-independent structure that also runs inside Electron, storage behind small interfaces (SQLite/PostgreSQL, streaming), long-running job contract for native workers, auth/audit/PHI-safe logging, Vitest and container-based integration tests. Framework-agnostic. Depends on `core` and `typescript`."
+    },
+    {
+      "name": "cpp-itk",
+      "source": "./plugins/cpp-itk",
+      "description": "Native compute skills — modern C++ style and static analysis, target-based CMake with presets and pinned ITK/elastix across macOS/Windows/Linux, ITK pipelines and transform conventions vs DICOM registration objects, a command-line worker contract for Node job runners, native unit/regression testing. Depends on `core`."
     }
   ]
 }
